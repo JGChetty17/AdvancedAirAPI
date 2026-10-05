@@ -1,3 +1,16 @@
+# Group members
+
+- ST10439133 - Camryn Naidoo
+- ST10441399 - Suvan Samlall
+- ST10451026 - Calib Frank
+- ST10446908 - Caleb Ragaven
+- ST10296234 - Joshua Chetty
+- ST10451537 - Keshvir Parthab
+
+## Suvan Samlall (ST10441399) is submitting our Task 2 WIL assignment on behalf of Camryn Naidoo (ST10439133) who is away and is unable to subm
+
+**YouTube Link Part 1:** 
+**YouTube Link Part 2:**
 # Advanced Air API
 
 Backend for the Advanced Air Conditioning website — a public-facing marketing and
