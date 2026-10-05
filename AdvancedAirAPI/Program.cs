@@ -16,9 +16,20 @@ namespace AdvancedAirAPI
 
             // ---------- Database ----------
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("SupabaseConnection")));
+                options.UseNpgsql(
+                    builder.Configuration.GetConnectionString("SupabaseConnection"),
+                    npgsqlOptions =>
+                    {
+                        npgsqlOptions.EnableRetryOnFailure(
+                            maxRetryCount: 5,
+                            maxRetryDelay: TimeSpan.FromSeconds(30),
+                            errorCodesToAdd: null
+                        );
+                        npgsqlOptions.CommandTimeout(30);
+                    }));
 
             // ---------- Application services ----------
+            builder.Services.AddMemoryCache();
             builder.Services.AddControllers();
             builder.Services.AddScoped<ProductService>();
             builder.Services.AddScoped<ServiceService>();
@@ -48,21 +59,19 @@ namespace AdvancedAirAPI
 
             var app = builder.Build();
 
-            // Enable Swagger in all environments so you can test the deployed API
+            // Enable Swagger in all environments
             app.UseSwagger();
             app.UseSwaggerUI();
 
-            // Skip HTTPS redirect in production — Render terminates HTTPS for us
-            if (!app.Environment.IsProduction())
-            {
-                app.UseHttpsRedirection();
-            }
+            // NOTE: HTTPS redirect intentionally disabled.
+            // Render terminates HTTPS at the proxy level.
+            // app.UseHttpsRedirection();
 
             app.UseCors("AllowReactApp");
             app.UseAuthorization();
             app.MapControllers();
 
-            // Health check — returns 200 OK when the app is running
+            // Health check
             app.MapGet("/health", () => Results.Ok(new
             {
                 status = "healthy",
