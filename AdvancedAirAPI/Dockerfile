@@ -17,7 +17,7 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Render assigns a port via PORT env var. Default 8080 as fallback.
-ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_URLS=http://+:${PORT:-8080}
 EXPOSE 8080
 
 ENTRYPOINT ["dotnet", "AdvancedAirAPI.dll"]
