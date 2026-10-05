@@ -13,3 +13,26 @@ connecting to a **Supabase PostgreSQL** database.
 
 The API is a classic three-tier backend. It sits between the React frontend and
 Supabase:
+
+- The React frontend calls REST endpoints (`/api/products`, `/api/services`, etc.).
+- The API queries PostgreSQL via EF Core and returns JSON.
+- Form submissions (contact, callout, quote) are written to Supabase.
+
+No login or authentication is required — the website is public and read-mostly.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Framework | ASP.NET Core Web API (.NET 8) |
+| ORM | Entity Framework Core |
+| Database | Supabase (PostgreSQL) |
+| DB driver | Npgsql.EntityFrameworkCore.PostgreSQL |
+| API docs | Swagger / OpenAPI |
+| Frontend | React (separate project) |
+
+---
+
+## Project Structure
