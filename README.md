@@ -8,6 +8,8 @@ Built with **ASP.NET Core Web API** + **Entity Framework Core** + **Npgsql**,
 connecting to a **Supabase PostgreSQL** database.
 
 ---
+##IMPORTANT NOTE
+Suvan Samlall(ST10441359) made several commits from my account Joshua Chetty (JGChetty17) at campus due to issues with the vm and campus wifi.
 
 ## Overview
 
