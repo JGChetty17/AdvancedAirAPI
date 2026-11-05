@@ -23,12 +23,9 @@ The API manages product catalogues, service listings, customer enquiries, urgent
 
 | Deliverable | Link |
 |:---|:---|
-| **Website Hosted Link** | *Add Cloudflare Pages URL* |
-| **Website Demo Video** | *Add YouTube link* |
 | **Website GitHub Repository** | [HvacWebsite](https://github.com/ST10441359/HvacWebsite.git) |
 | **Website API GitHub Repository** | [AdvancedAirAPI](https://github.com/ST10441359/AdvancedAirAPI.git) |
 | **Website API Hosted Link** | [AdvancedAirAPI – Render](https://advancedairapi.onrender.com) |
-| **Website API Demo Video** | *Add YouTube link* |
 
 ---
 
