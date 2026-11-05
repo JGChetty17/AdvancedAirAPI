@@ -6,7 +6,7 @@ The API manages product catalogues, service listings, customer enquiries, urgent
 
 ---
 
-## Group Members
+## Group Member
 
 | Student Number | Name |
 |:---|:---|
